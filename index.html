@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rob.prep | Premium CBT</title>
+    
+    <meta name="description" content="Master GST111 & COS101 with 200+ past questions. Built for UNIBEN ICT Students.">
+    <meta property="og:title" content="rob.prep | Premium CBT">
+    <meta property="og:description" content="sure pass!">
+    <meta property="og:image" content="https://preview.png">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#6a0dad">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --purple: #7c3aed; 
+            --purple-glow: rgba(124, 58, 237, 0.3);
+            --bg: #0f172a; 
+            --card: #1e293b; 
+            --card-hover: #2d3e56;
+            --text: #f1f5f9; 
+            --muted: #94a3b8; 
+            --green: #10b981; 
+            --red: #ef4444; 
+            --accent: #334155;
+            --trans: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    /* Fix for the side-alignment */
+body {
+    flex-direction: column; /* Stacks header, card, and footer vertically */
+    gap: 20px;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    min-height: auto; /* Let the content define the height */
+}
+
+
+
+footer {
+    margin-top: 50px;
+    padding: 30px 0;
+    border-top: 1px solid var(--accent);
+    width: 100%;
+    max-width: 950px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+
+
+.view-count {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(124, 58, 237, 0.1); /* Subtle purple tint */
+    padding: 8px 15px;
+    border-radius: 12px;
+    border: 1px solid var(--accent);
+    transition: var(--trans);
+}
+
+.view-count:hover {
+    background: rgba(124, 58, 237, 0.2);
+    border-color: var(--purple);
+}
+
+
+.view-count i {
+    color: var(--purple);
+    font-size: 14px;
+    text-shadow: 0 0 8px var(--purple-glow);
+}
+
+/* Optional: Subtle eye blink/pulse animation */
+@keyframes eyePulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+.fa-eye { animation: eyePulse 3s infinite ease-in-out; }
+
+/* Mobile responsiveness: stack them on very small screens */
+@media (max-width: 500px) {
+    .footer-container { flex-direction: column; gap: 15px; }
+}
+.footer-content {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+   
+}
+
+.footer-link {
+    color: var(--purple);
+    text-decoration: none;
+    font-weight: 800;
+    transition: var(--trans);
+}
+
+.footer-link:hover {
+    color: #a855f7;
+    text-shadow: 0 0 10px var(--purple-glow);
+}
+        body.light {
+            --bg: #f6f7fb; 
+            --card: #ffffff; 
+            --card-hover: #f9fafb;
+            --text: #0f172a; 
+            --muted: #64748b; 
+            --purple-glow: rgba(124, 58, 237, 0.1);
+            --accent: #eef2ff;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        
+        body { 
+            background: var(--bg); 
+            color: var(--text); 
+            min-height: 100vh; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            padding: 20px; 
+            transition: background 0.5s, color 0.5s; 
+            overflow-x: hidden;
+        }
+
+        .app { width: 100%; max-width: 950px; }
+
+        .header { 
+            display: flex; 
+            justify-content: space-between; 
+            margin-bottom: 40px; 
+            align-items: center; 
+            animation: slideDown 0.6s ease;
+        }
+        
+        .title { 
+            font-weight: 900; 
+            font-size: 36px; 
+            color: var(--purple); 
+            letter-spacing: -2px; 
+            cursor: pointer; 
+            text-shadow: 0 0 15px var(--purple-glow);
+        }
+
+        .card { 
+            background: var(--card); 
+            padding: 40px; 
+            border-radius: 30px; 
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); 
+            border: 1px solid rgba(255,255,255,0.03);
+            animation: slideUp 0.6s ease; 
+            position: relative; 
+            transition: var(--trans);
+        }
+        body.dark .card { box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5), 0 0 15px var(--purple-glow); }
+
+        .home-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
+            gap: 25px; 
+        }
+        
+        .home-box { 
+            padding: 35px; 
+            border-radius: 25px; 
+            background: var(--card); 
+            border: 1px solid var(--accent); 
+            cursor: pointer; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            text-align: center; 
+            transition: var(--trans); 
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .home-box:hover { 
+            transform: translateY(-10px) scale(1.02); 
+            border-color: var(--purple); 
+            background: var(--card-hover);
+        }
+        body.dark .home-box:hover { box-shadow: 0 10px 30px -5px rgba(0,0,0,0.3), 0 0 20px var(--purple-glow); }
+
+        .home-box i { 
+            font-size: 48px; 
+            background: linear-gradient(135deg, var(--purple), #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px; 
+            transition: var(--trans);
+        }
+
+        .home-box h3 { font-weight: 800; font-size: 20px; margin-bottom: 8px; letter-spacing: -0.5px;}
+        .home-box p { font-size: 14px; color: var(--muted); font-weight: 500; }
+
+        h3.question-text { font-weight: 800; font-size: 24px; line-height: 1.4; margin-bottom: 30px; letter-spacing: -1px;}
+
+        .options { margin: 30px 0; display: flex; flex-direction: column; gap: 15px; }
+        
+        .options button { 
+            width: 100%; 
+            padding: 20px; 
+            border: 2px solid var(--accent); 
+            border-radius: 18px; 
+            background: var(--card); 
+            color: var(--text); 
+            cursor: pointer; 
+            text-align: left; 
+            font-size: 17px; 
+            font-weight: 600; 
+            transition: var(--trans); 
+            display: flex; 
+            align-items: center;
+        }
+        
+        .options button:hover:not(:disabled) { 
+            border-color: var(--purple); 
+            background: var(--card-hover); 
+            transform: translateX(5px);
+        }
+        
+        .options button.correct { 
+            background: var(--green) !important; 
+            color: white; 
+            border-color: var(--green); 
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+        }
+        
+        .options button.wrong { 
+            background: var(--red) !important; 
+            color: white; 
+            border-color: var(--red); 
+            box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
+        }
+
+        .btn { 
+            padding: 16px 32px; 
+            border: none; 
+            border-radius: 16px; 
+            background: linear-gradient(135deg, var(--purple), #a855f7); 
+            color: white; 
+            cursor: pointer; 
+            font-weight: 800; 
+            font-size: 16px; 
+            transition: var(--trans); 
+            box-shadow: 0 10px 20px -5px var(--purple-glow);
+        }
+        
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 15px 25px -5px var(--purple-glow); }
+        .btn:active { transform: translateY(1px); }
+
+        .btn-secondary { background: var(--accent); color: var(--text); box-shadow: none; }
+        .btn-secondary:hover { background: var(--card-hover); box-shadow: none; }
+
+        .progress-container { margin: 25px 0; }
+        .progress-bar { height: 12px; background: var(--accent); border-radius: 20px; overflow: hidden; }
+        .progress-fill { 
+            height: 100%; 
+            background: linear-gradient(90deg, var(--purple), #a855f7); 
+            transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1); 
+            border-radius: 20px;
+            box-shadow: 0 0 10px var(--purple-glow);
+        }
+
+        .palette { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 10px; 
+            margin-top: 30px; 
+            border-top: 1px solid var(--accent); 
+            padding-top: 30px; 
+        }
+        
+        .palette button { 
+            width: 42px; 
+            height: 42px; 
+            border-radius: 12px; 
+            border: 2px solid var(--accent); 
+            background: var(--card); 
+            color: var(--muted); 
+            cursor: pointer; 
+            font-size: 14px; 
+            font-weight: 700; 
+            transition: var(--trans);
+        }
+        
+        .palette button:hover { border-color: var(--purple); color: var(--purple); }
+        .palette button.done { background: var(--purple); color: white; border-color: var(--purple); box-shadow: 0 0 10px var(--purple-glow); }
+        .palette button.current { border-color: var(--purple); color: var(--purple); transform: scale(1.15); font-size: 16px;}
+
+        .explain { 
+            background: rgba(16, 185, 129, 0.1); 
+            color: #bbf7d0; 
+            padding: 20px; 
+            border-radius: 16px; 
+            margin-top: 20px; 
+            border-left: 6px solid var(--green); 
+            font-weight: 500; 
+            font-size: 16px;
+            animation: fadeIn 0.5s ease;
+        }
+        body.light .explain { background: #dcfce7; color: #166534; }
+
+        .review-scroll { max-height: 450px; overflow-y: auto; margin: 25px 0; padding-right: 15px; }
+        .review-scroll::-webkit-scrollbar { width: 8px; }
+        .review-scroll::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 10px; }
+
+        canvas#confetti { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999; }
+        
+        @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        
+        .theme-toggle {
+            background: var(--card);
+            border: 2px solid var(--accent);
+            color: var(--muted);
+            width: 50px; height: 50px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: var(--trans);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 20px;
+        }
+        .theme-toggle:hover { border-color: var(--purple); color: var(--purple); box-shadow: 0 0 15px var(--purple-glow); }
+
+    </style>
+</head>
+<body class="dark">
+
+<div class="app">
+    <div class="header">
+        <div class="title" onclick="goHome()">Rob.prep</div>
+        <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn">
+            <i class="fa-solid fa-sun"></i>
+        </button>
+    </div>
+    <div id="app-root"></div>
+</div>
+
+<canvas id="confetti"></canvas>
+<footer>
+    <div class="footer-container">
+        <div class="view-count" title="Total Global Visitors">
+            <i class="fa-solid fa-eye"></i>
+            <span id="view-number">...</span>
+            <span style="font-size: 10px; opacity: 0.6; margin-left: 4px; text-transform: uppercase; color: var(--green);">Live</span>
+        </div>
+
+        <div class="footer-content">
+            © 2026 rob.prep <span style="opacity:0.3; margin:0 8px;">|</span> 
+            Built by <a href="https://wa.me/2348079558310" class="footer-link">Robin</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+const STORAGE_KEY = "rob_prep_premium_v1";
+const QUESTIONS_DATA = {
+    COS101: [
+    { q: "Which of the following best defines a computer?", o: ["An electronic device used for typing", "A programmable electronic device designed to accept data, process data and convert it to information", "A machine that only stores data", "A device that only outputs information"], a: 1, exp: "A computer's core function is the Input-Process-Output-Storage cycle." },
+    { q: "The accuracy of a computer's output depends primarily on:", o: ["The speed of the processor", "The size of the memory", "How accurate the operator or programmer is", "The number of applications installed"], a: 2, exp: "Computers are tools; they can only be as accurate as the instructions and data provided by humans." },
+    { q: "The principle 'Garbage In, Garbage Out' (GIGO) refers to:", o: ["Viruses corrupting data", "Hardware failure causing wrong output", "Wrong input producing wrong output", "Power failure affecting computer accuracy"], a: 2, exp: "If invalid data is entered (garbage in), the resulting output will also be invalid (garbage out)." },
+    { q: "Which characteristic refers to the ability to perform repetitive tasks using technology?", o: ["Speed", "Accuracy", "Storage", "Automation"], a: 3, exp: "Automation allows a computer to perform tasks without constant human intervention." },
+    { q: "Computer speed is measured in:", o: ["Bytes", "Megabytes", "Hertz (Hz)", "Volts"], a: 2, exp: "Clock speed, measured in Hertz, indicates how many cycles a CPU executes per second." },
+    { q: "Which of the following is NOT a limitation of computers?", o: ["Computers are dumb machines", "Digital computers have no sense of meaning", "Computers cannot think or act on their own", "Computers can process data very fast"], a: 3, exp: "Fast processing is a strength/characteristic, not a limitation." },
+    { q: "Computer networks are described as:", o: ["Very cheap to develop", "Essential for single-user tasks", "Costly to develop", "Only used in large organisations"], a: 2, exp: "Building infrastructure for networking involves significant hardware and maintenance costs." },
+    { q: "The first generation of computers (1940–1956) used which technology?", o: ["Transistors", "Integrated circuits", "Vacuum tubes and magnetic drums", "Microprocessors"], a: 2, exp: "Vacuum tubes were huge and generated immense heat, leading to the massive size of 1st gen computers." },
+    { q: "What input/output method was used in first generation computers?", o: ["Keyboard and monitor", "Punched cards for input and printout for output", "Mouse and speakers", "Touch screen and USB drives"], a: 1, exp: "Before monitors and keyboards, data was fed into machines via holes in stiff paper cards." },
+    { q: "The second generation of computers replaced vacuum tubes with:", o: ["Integrated circuits", "Transistors", "Microprocessors", "Silicon chips"], a: 1, exp: "Transistors were smaller, faster, and more reliable than vacuum tubes." },
+    { q: "Which generation introduced keyboards, monitors, and an operating system?", o: ["First generation", "Second generation", "Third generation", "Fifth generation"], a: 2, exp: "The 3rd generation (Integrated Circuits) allowed for more user-friendly interfaces." },
+    { q: "The fourth generation of computers introduced:", o: ["Vacuum tubes", "Transistors", "Microprocessors built on a silicon chip", "Assembly language"], a: 2, exp: "This led to the 'Personal Computer' revolution as thousands of circuits fit on one chip." },
+    { q: "The fifth generation of computers is primarily based on:", o: ["Magnetic core technology", "Transistor technology", "Artificial Intelligence and parallel processing", "Integrated circuits only"], a: 2, exp: "5th gen focuses on mimicking human intelligence and processing multiple tasks at once." },
+    { q: "Which generation led to the development of the Internet through networks?", o: ["Second generation", "Third generation", "Fourth generation", "Fifth generation"], a: 2, exp: "The miniaturization in the 4th gen made widespread networking practical." },
+    { q: "A nibble in data representation refers to:", o: ["A single binary digit", "A group of 8 bits", "A group of 4 bits", "A group of 16 bits"], a: 2, exp: "A nibble is exactly half of a byte (4 bits)." },
+    { q: "In a byte, which bit position is the Most Significant Bit (MSB)?", o: ["Bit position 0", "Bit position 3", "Bit position 4", "Bit position 7"], a: 3, exp: "In an 8-bit byte (0-7), the leftmost bit (7) carries the highest value." },
+    { q: "A double word in data representation consists of:", o: ["8 bits", "16 bits", "32 bits", "64 bits"], a: 2, exp: "A word is usually 16 bits; therefore, a double word is 32 bits." },
+    { q: "The key difference between BCD and EBCDIC is:", o: ["BCD is 8-bit, EBCDIC is 4-bit", "BCD is alphanumeric, EBCDIC is numbers", "BCD is 4-bit, EBCDIC is 8-bit", "Exactly the same"], a: 2, exp: "Binary Coded Decimal is a 4-bit system; EBCDIC is an extended 8-bit system." },
+    { q: "In ASCII, the code value assigned to uppercase 'A' is:", o: ["48", "97", "65", "33"], a: 2, exp: "ASCII values are standardized; 'A' is 65, while lowercase 'a' is 97." },
+    { q: "Why is the binary system the foundation of computer programming?", o: ["Uses ten digits", "Easier for humans", "Matches the two electronic states (0/1)", "Invented before decimal"], a: 2, exp: "Transistors act as switches that are either ON (1) or OFF (0)." },
+    { q: "Which generation leads to the development of Internet?", o: ["5th generation", "3rd generation", "4th generation", "2nd generation"], a: 2, exp: "The 4th generation provided the hardware power needed for global networking." },
+    { q: "Which protocol is designed to search, retrieve and display documents from remote?", o: ["Archie", "Gopher", "Maily mail", "Telnet"], a: 1, exp: "Gopher was a pre-WWW protocol used to distribute and retrieve documents." },
+    { q: "Dropping a message in a community group for everyone to see is an example of:", o: ["Mail forwarding services", "Gopher", "Maily mix", "Telnet"], a: 2, exp: "This refers to early community mailing/messaging systems." },
+    { q: "Which of this is categorized under Auxiliary hardware?", o: ["Heat sink", "Bridge", "Router", "Analog model"], a: 0, exp: "Auxiliary hardware supports the main system's operation; a heat sink prevents overheating." },
+    { q: "In hybrid computers, which component solves differential equations?", o: ["Analog", "Expansion card", "Digital", "Control unit"], a: 0, exp: "Analog components are excellent at continuous mathematical calculations like differential equations." },
+    { q: "Convert A45 (base 16) to Octal:", o: ["5115", "5105", "5015", "4515"], a: 1, exp: "A45 hex = 1010 0100 0101 binary = 5105 octal." },
+    { q: "Convert 11100101 to Hexadecimal:", o: ["E5", "5E", "D5", "5D"], a: 0, exp: "1110 is E and 0101 is 5 in hexadecimal." },
+    { q: "The smallest addressable memory data item on a computer is:", o: ["Bit", "Byte", "Nibble", "A & B"], a: 1, exp: "While a bit is the smallest unit of data, the Byte is usually the smallest addressable unit." },
+    { q: "In ASCII the letter D code value is:", o: ["65", "71", "68", "97"], a: 2, exp: "If A=65, B=66, C=67, then D=68." },
+    { q: "One of the uses of ASCII is:", o: ["Text emulation", "Text manipulation", "Accepting text as info/command", "All of the above"], a: 3, exp: "ASCII provides the standard numerical codes for all text operations." },
+    { q: "Integrated circuit was built in:", o: ["Micro processor", "Central processor", "Silicon chip", "None"], a: 2, exp: "ICs consist of many transistors etched onto a single small chip of silicon." },
+    { q: "One of the following is 7 bits encoding scheme:", o: ["BCD", "EBCDIC", "ASCII", "All of the above"], a: 2, exp: "Standard ASCII uses 7 bits to represent 128 characters." },
+    { q: "Convert 10111010 in Binary to Hexadecimal:", o: ["CA", "BA", "7B", "7A"], a: 1, exp: "1011 = B and 1010 = A." },
+    { q: "Which is used in weather forecasting research?", o: ["Mainframe", "Mini computer", "Super computer", "Hybrid computer"], a: 2, exp: "Supercomputers are required for the massive calculations involved in weather modeling." },
+    { q: "One of this is used to locate files on anonymous ftp server:", o: ["Ftp", "Archie", "Gopher", "TCP"], a: 1, exp: "Archie was the first tool for indexing FTP archives." },
+    { q: "Which browser allows the user to see more of what the website has to offer?", o: ["Text oriented", "Graphical browser", "Google browser", "Firefox"], a: 1, exp: "Graphical browsers display images and complex layouts unlike text-only browsers." },
+    { q: "Application software can also be classified under special purpose computer:", o: ["True", "False", "A & B", "I don't know"], a: 0, exp: "Specific apps are designed to perform specific (special) tasks." },
+    { q: "The component which connects all others and allows communication is:", o: ["Expansion card", "CPU", "Optical drive", "Motherboard"], a: 3, exp: "The motherboard is the main printed circuit board (PCB) of the computer." },
+    { q: "Code value of ASCII is:", o: ["0-127", "0-63", "1-128", "0-128"], a: 0, exp: "Standard ASCII defines 128 characters (0 to 127)." },
+    { q: "The last bit of the BCD represents:", o: ["The zone", "The magnitude", "Digit parity", "The character value"], a: 2, exp: "Parity bits are used for simple error detection." },
+    { q: "An acronym for Electronic Numerical Integrator and Calculator is:", o: ["ENIC", "EDVAC", "ENIAC", "ENAIC"], a: 2, exp: "ENIAC was the first general-purpose electronic digital computer." },
+    { q: "All are components of the motherboard except:", o: ["USB", "PCI slot", "Floppy controller", "Parallel plug in"], a: 3, exp: "While it has parallel ports, 'Parallel plug in' is not a standard motherboard component term." },
+    { q: "These are circuit boards to add functionality to a computer:", o: ["Optical drive", "Expansion card", "Hard drive", "All of the above"], a: 1, exp: "Expansion cards (like GPU/Sound cards) add specific features to the system." },
+    { q: "Your phone is an example of:", o: ["Mini computer", "Micro computer", "Super computer", "Mainframe"], a: 1, exp: "Microcomputers are computers with a microprocessor for a CPU (PCs, phones, tablets)." },
+    { q: "Which of the following can operate non-stop for more than 10 years?", o: ["Mini", "Super", "Mainframe", "Micro"], a: 2, exp: "Mainframes are designed for high reliability and 'uptime' over many years." },
+    { q: "Second generation of computer were made between:", o: ["1957-1964", "1958-1965", "1959-1964", "1959-1966"], a: 2, exp: "The timeline for the 2nd generation (transistors) is generally 1959-1964." },
+    { q: "Which generation relies on machine language to perform operations?", o: ["First", "Second", "Third", "Fourth"], a: 0, exp: "1st gen computers were programmed in binary (0s and 1s)." },
+    { q: "Generation that moved from machine language to assembly symbolic language:", o: ["First", "Second", "Third", "Fourth"], a: 1, exp: "2nd gen introduced assembly, making programming slightly more human-readable." },
+    { q: "Which generation uses parallel processing and semiconductors?", o: ["First", "Second", "Third", "Fifth"], a: 3, exp: "Parallel processing is a hallmark of AI and 5th generation computing." },
+    { q: "Used to represent Hexadecimal and binary coded decimal numbers:", o: ["Nibble", "Byte", "Bit", "None"], a: 0, exp: "A nibble (4 bits) perfectly represents one Hexadecimal digit (0-F)." },
+    { q: "Which is NOT true about booting?", o: ["Warm boot is turning on from off", "Operating system portion is kernel", "POST checks hardware", "BIOS is in ROM"], a: 0, exp: "Warm boot is restarting; Cold boot is turning on from a completely OFF state." },
+    { q: "Convert 11011.101 (Binary) to decimal:", o: ["27.625", "34.90", "44.56", "24.55"], a: 0, exp: "11011 is 27, and .101 is 0.5 + 0 + 0.125 = 0.625." },
+    { q: "Which is possibly an advantage of using an office suite?", o: ["Free", "Easy to obtain", "File sharing", "Universal across platforms"], a: 3, exp: "Standard suites like MS Office ensure files can be opened by anyone else with the suite." },
+    { q: "Which software under MS Office supports file sharing?", o: ["Graphic design", "Communication", "Spreadsheet", "Word processor"], a: 1, exp: "Communication software (like Outlook/Teams) is built for sharing and collaboration." },
+    { q: "Which can handle sequential program line interpretation?", o: ["System unit", "Memory", "Registers", "Control unit"], a: 3, exp: "The Control Unit (CU) manages the execution of instructions." },
+    { q: "Which of the following is executed by the BIOS?", o: ["Load OS", "Load apps", "Memory text", "None"], a: 2, exp: "During POST, the BIOS checks/tests the system memory." },
+    { q: "Which task is NOT performed by utility programs?", o: ["Disk management", "Linking and loading", "Backup", "Virus protection"], a: 1, exp: "Linking and loading are functions of the operating system/compiler tools, not utilities." },
+    { q: "Octal equivalent of 1100101.001010:", o: ["624.2", "154.12", "145.12", "624.12", "145.2"], a: 4, exp: "Group bits in 3s: 001 100 101 . 001 010 = 1 4 5 . 1 2." },
+    { q: "Memories where any location reached in fixed/short time is called:", o: ["Secondary", "RAM", "Sequential", "Mass storage"], a: 2, exp: "Random Access Memory (RAM) allows data to be read in the same time regardless of location." },
+    { q: "All but one is a part of the machine cycle:", o: ["Fetching", "Coding", "Decoding", "Storing"], a: 1, exp: "The cycle is Fetch, Decode, Execute, and Store. 'Coding' is not a step in the CPU cycle." },
+    { q: "Which of these is not a file management task?", o: ["Virus protection", "Copying", "Editing", "Deleting"], a: 0, exp: "Virus protection is a security utility task, not a basic file manipulation task." },
+    { q: "The capacity of an internet connection is referred to as:", o: ["Bandwidth", "Kilobyte", "Megabyte", "Gigabyte"], a: 0, exp: "Bandwidth measures the maximum data transfer rate of a network." },
+    { q: "Which allows files to be transferred between computers?", o: ["FTP", "Telnet", "HTTP", "Gopher"], a: 0, exp: "FTP stands for File Transfer Protocol." },
+    { q: "Which of these is NOT true about IP addresses?", o: ["IP address are not unique", "IP addresses are global", "Domain maps to IP", "Standardized"], a: 0, exp: "Every device on a network must have a unique IP address to communicate." },
+    { q: "Which of these is NOT true about URLs?", o: ["URL consists of letters/numbers only", "Standardized scheme", "Identifies resource", "Hierarchical"], a: 0, exp: "URLs can contain special characters like /, ?, &, and %." },
+    { q: "Shows in detail the steps for transforming input into output:", o: ["Program flowchart", "Run flowchart", "System flowchart", "Pseudocode"], a: 0, exp: "A program flowchart maps out the logic within a specific program." },
+    { q: "Which of these is NOT true about programming?", o: ["Debugging is finding errors", "Algorithms go top to bottom", "Precise steps are algorithms", "Error is a bug"], a: 1, exp: "Algorithms can include loops and branches, not just a straight top-to-bottom sequence." },
+    { q: "Which of these is NOT true about errors?", o: ["Missing brackets are run time errors", "Wrong salary is logical", "Syntax is compilation error", "Divide by zero is execution"], a: 0, exp: "Missing brackets are Syntax errors (caught during compilation), not Run-time errors." },
+    { q: "Which of these is NOT true about languages?", o: ["4GLS are not problem oriented", "4GL are non-procedural", "Machine language is 0s/1s", "Natural languages mimic human speech"], a: 0, exp: "4th Generation Languages (4GLs) are actually highly problem-oriented (e.g., SQL for databases)." },
+    { q: "Which of these is NOT true about OS?", o: ["Virtual machine doesn't allow two OS", "Monitors security", "Allocates resources", "Disk management"], a: 0, exp: "Virtualization specifically allows a single machine to run multiple different operating systems." },
+    { q: "Which is not a step in developing an algorithm?", o: ["Identify patterns", "Understand problem", "Carry out plan", "Coding the plan"], a: 0, exp: "While patterns help, the standard steps focus on understanding, planning, and execution." },
+    { q: "Analysis, design, coding and execution are stages of:", o: ["Program development cycle", "Building an algorithm", "Flowchart construction", "None"], a: 0, exp: "This describes the full life cycle of creating a software program." },
+    { q: "The first network that planted the seed of internet was:", o: ["ARPAnet", "NSnet", "Vnet", "Both A and B"], a: 0, exp: "ARPAnet was the US Department of Defense project that became the Internet." },
+    { q: "Which protocol is used for WWW?", o: ["FTP", "HTTP", "W3", "HPTT"], a: 1, exp: "HTTP (Hypertext Transfer Protocol) is the foundation of data exchange on the web." },
+    { q: "The first page you normally view at a website is its:", o: ["Home page", "Master page", "First page", "Original page"], a: 0, exp: "The 'Home page' acts as the index or starting point for a site." },
+    { q: "GPS is a computer application in which area?", o: ["Medicine", "Education", "Transportation", "Teaching"], a: 2, exp: "Global Positioning System is vital for navigation and logistics." },
+    { q: "Statement about e-mail that is NOT true:", o: ["Faster than post", "Cheaper than post for large docs", "Viruses cannot spread via email", "None"], a: 2, exp: "Emails are a primary vector for spreading malware and viruses via attachments." },
+    { q: "Term for a worldwide network of computers:", o: ["CPU", "Internet", "RAM", "Network"], a: 1, exp: "The Internet is the global 'network of networks'." },
+    { q: "Principles and moral standards relating to computer use:", o: ["Policies", "Guidelines", "Ethics", "None"], a: 2, exp: "Computer Ethics deals with how computing professionals and users should behave." },
+    { q: "Entitlements of persons for the creativity of their minds:", o: ["Honorarium", "Royalties", "Intellectual property rights", "Endowments"], a: 2, exp: "IP rights protect creations like software, books, and inventions." },
+    { q: "Copying and publishing work without citation:", o: ["Plagiarism", "Copyright", "Intrusion", "Snooping"], a: 0, exp: "Plagiarism is the unethical act of presenting someone else's work as your own." },
+    { q: "Principles that promote trust, fairness and governing conduct:", o: ["Societal Policies", "Guidelines", "Ethical standards", "Ethical concerns"], a: 2, exp: "Ethical standards provide the 'rules' for good behavior in a professional field." },
+    { q: "The ten Commandments of Computer Ethics were created by:", o: ["Computer Ethics Institute", "Internet Advisory Board", "Ethics Committee", "Copyright Group"], a: 0, exp: "The CEI created these famous rules to guide ethical computer use." },
+    { q: "Owning the _____ implies permission must be sought before copying:", o: ["Origination", "Patent", "Creation", "Invention"], a: 1, exp: "A patent gives an inventor exclusive rights to their invention for a set period." },
+    { q: "Octal equivalent of hexadecimal number AFC54:", o: ["2576124", "5721624", "2567142", "2756142"], a: 0, exp: "Hex AFC54 to Binary: 1010 1111 1100 0101 0100. Regroup by 3s: 2 5 7 6 1 2 4." },
+    { q: "Octal equivalent representing 0.527 in 6 bits:", o: ["041221", "0.214172", "0.12142", "0.412172"], a: 4, exp: "The correct calculation for this floating point conversion is not listed." },
+    { q: "Convert 1001001100 (Binary) to decimal:", o: ["256", "2048", "1024", "588"], a: 3, exp: "512 + 64 + 8 + 4 = 588." },
+    { q: "Convert 12 in Hexadecimal to Binary:", o: ["10001", "10010", "10100", "11000"], a: 1, exp: "1 is 0001 and 2 is 0010." },
+    { q: "Conversion of 1056 in base 10 to octal:", o: ["101265", "102465", "20488", "5125"], a: 4, exp: "1056 / 8 = 132 R0; 132 / 8 = 16 R4; 16 / 8 = 2 R0; 2 / 8 = 0 R2. Result: 2040." },
+    { q: "In BCD system, each decimal digit is encoded using how many bits?", o: ["2", "4", "8", "16"], a: 1, exp: "BCD uses 4 bits per digit to represent numbers 0-9." },
+    { q: "Charles Babbage proposed a steam driving machine called:", o: ["Analytic engine", "CPU", "Census tabulator", "Difference engine"], a: 4, exp: "The Difference Engine was Babbage's early design for calculating mathematical tables." },
+    { q: "Acronym for Electronic Numerical Integrator and Calculator:", o: ["EDVC", "MARC", "NEUMANN", "ENIAC"], a: 3, exp: "ENIAC is the correct historical name." },
+    { q: "Second generation computers replaced vacuum tubes with:", o: ["Integrated circuits", "Transistors", "COBOL", "CHIPS"], a: 1, exp: "Transistors defined the 2nd generation." },
+    { q: "A skilled abacus operator can work at the speed of a:", o: ["Computer", "Human", "Technology", "Programmer"], a: 1, exp: "An abacus is a manual tool; the operator's speed is compared to another human with a calculator." },
+    { q: "Who invented logarithms?", o: ["Leonardo", "Babylonians", "John Napier", "Leibniz"], a: 2, exp: "John Napier published his discovery of logarithms in 1614." },
+    { q: "Main electronic component used in the 3rd generation:", o: ["Integrated circuits", "Vacuum tubes", "Transistors", "Microprocessor"], a: 0, exp: "ICs (chips) defined the 3rd generation (1964-1971)." },
+    { q: "Which computer speed is measured in FLOPS?", o: ["Minicomputer", "Supercomputer", "Mainframe", "Micro"], a: 1, exp: "Floating Point Operations Per Second is used to measure high-performance supercomputing." },
+    { q: "Which of the following is NOT an operating system?", o: ["Linux", "IOS", "HP", "Android"], a: 2, exp: "HP is a hardware company (Hewlett-Packard), not an operating system." },
+    { q: "Which generation eventually led to the internet?", o: ["Fifth", "Third", "Fourth", "First"], a: 1, exp: "Initial networking research (ARPANET) began during the 3rd generation era." },
+    { q: "Which of the following is a network hardware device?", o: ["Scanner", "Webcam", "Projector", "Repeater"], a: 3, exp: "A repeater amplifies signals so they can travel longer distances over a network." }
+],
+   GST111: [
+    { q: "The word 'affable' is closest in meaning to:", o: ["Benign", "Surly", "Distant", "Friendly"], a: 3, exp: "Affable describes someone who is easy to talk to and pleasant." },
+    { q: "'To jazz up' means to:", o: ["Make something more exciting", "Go faster", "Make a lot of noise", "None of the options"], a: 0, exp: "To jazz something up is to make it more interesting, lively, or colorful." },
+    { q: "'To eke out' means:", o: ["To rush out", "To do with difficulty", "To make easily", "None of the options"], a: 1, exp: "To eke out a living or an existence means to manage to survive with great effort." },
+    { q: "'To go like clockwork' means:", o: ["To run smoothly", "Go crazy", "Cost a lot of money", "To walk like a clock"], a: 0, exp: "When things go like clockwork, they happen exactly as planned without problems." },
+    { q: "'To pack off' means:", o: ["Put away", "Give away", "Send away", "None of the options"], a: 2, exp: "To pack someone off is to send them away to another place." },
+    { q: "'Par for the course' means it is:", o: ["Typical", "Very good", "Terrible", "Successful"], a: 0, exp: "If something is par for the course, it is what you would normally expect to happen." },
+    { q: "The word 'petrified' is nearest in meaning to:", o: ["Frightened", "Happy", "Delighted", "Agitated"], a: 0, exp: "Petrified literally means turned to stone, usually due to extreme fear." },
+    { q: "The opposite of 'jaunty' is:", o: ["Inviting", "Cheerful", "Lifeless", "Happy"], a: 2, exp: "Jaunty means lively and self-confident; lifeless is its direct opposite." },
+    { q: "The word 'virtuous' is nearest in meaning to:", o: ["Clever", "Intelligent", "Upright", "Devilish"], a: 2, exp: "Virtuous refers to having high moral standards or being 'upright'." },
+    { q: "The word 'appalling' is opposite in meaning to:", o: ["Simple", "Complex", "Cloudy", "Pleasant"], a: 3, exp: "Appalling means shocking or horrific; pleasant means nice and enjoyable." },
+    { q: "'Extempore' is nearest in meaning to:", o: ["Off-hand", "Courageously", "Off the cuff", "Accurately"], a: 0, exp: "Extempore means spoken or done without preparation." },
+    { q: "The word 'ardent' is nearest in meaning to:", o: ["An optimistic", "A passionate", "A cogent", "An ignorant"], a: 1, exp: "Ardent is used to describe someone with very strong feelings about something." },
+    { q: "The word 'vindictive' is opposite in meaning to:", o: ["Friendly", "Arrogant", "Treacherous", "Vociferous"], a: 0, exp: "Vindictive means having a strong desire for revenge." },
+    { q: "The word 'innocuous' is nearest in meaning to:", o: ["Harmful", "Harmless", "Innocent", "Immunized"], a: 1, exp: "Something innocuous is not harmful or offensive." },
+    { q: "The word 'heinous' is opposite in meaning to:", o: ["Indelible", "Deplorable", "Laudable", "Forgettable"], a: 2, exp: "Heinous means wicked/evil; laudable means deserving praise." },
+    { q: "The word 'placid' is a synonym for:", o: ["Calm", "Impulsive", "Excitable", "Agitate"], a: 0, exp: "A placid person or lake is calm and peaceful." },
+    { q: "The word 'communal' is opposite in meaning to:", o: ["Private", "General", "Collective", "Shared"], a: 0, exp: "Communal involves a whole community; private involves one person." },
+    { q: "'Bespoke' is nearest in meaning to:", o: ["Repeated", "Pale faced", "Custom-made", "Eloquent"], a: 2, exp: "Bespoke items are specially made for a particular customer." },
+    { q: "The word 'erudite' is nearest in meaning to:", o: ["Wrong", "Grand", "Scholarly", "Somber"], a: 2, exp: "An erudite person has great knowledge or learning." },
+    { q: "The word 'scintillating' is nearest in meaning to:", o: ["Distressing", "Refined", "Fascinating", "Discouraging"], a: 2, exp: "Scintillating means sparkling or brilliantly clever and fascinating." },
+    { q: "The word 'translucent' is opposite in meaning to:", o: ["Transparent", "Opaque", "Intersected", "Luminous"], a: 1, exp: "Translucent allows light through; opaque blocks it completely." },
+    { q: "'Adversary' is nearest in meaning to:", o: ["Helper", "Leader", "Enemy", "Civilian"], a: 2, exp: "An adversary is an opponent or enemy in a conflict." },
+    { q: "The word 'languid' is opposite in meaning to:", o: ["Noisy", "Weak", "Healthy", "Lively"], a: 3, exp: "Languid means slow or relaxed; lively means full of energy." },
+    { q: "'Camaraderie' is opposite in meaning to:", o: ["Forlornness", "Companionship", "Comity", "None of the options"], a: 0, exp: "Camaraderie is mutual trust and friendship." },
+    { q: "'Diabolical' is opposite in meaning to:", o: ["Saintly", "Magician", "Angelic", "Pastor"], a: 0, exp: "Diabolical means characteristic of the Devil." },
+    { q: "The acronym OPAC stands for:", o: ["Online Private Activity Classification", "Online Public Access Catalogue", "Online Personal Access Catalogue", "None"], a: 1, exp: "OPAC is the computerized version of a library card catalog." },
+    { q: "The major advantage of OPAC over the card catalogue is:", o: ["It uses a computer", "More visible and appealing", "It allows multiple user access", "Gives more details"], a: 2, exp: "Many people can search the OPAC simultaneously from different terminals." },
+    { q: "Legal depository law applies to:", o: ["National Libraries", "Public Libraries", "Special Libraries", "None of the options"], a: 0, exp: "Publishers are legally required to send copies of new books to the National Library." },
+    { q: "The acronym ISBN stands for:", o: ["International Serial Book Number", "International Standard Book Number", "International Serial Bibliographic Number", "None"], a: 1, exp: "ISBN is a unique commercial book identifier barcode." },
+    { q: "Et.al is used to acknowledge a book written by:", o: ["Two authors and above", "Three authors and above", "Four authors and above", "Below four authors"], a: 1, exp: "Et al. is Latin for 'and others,' used when there are 3+ authors." },
+    { q: "The head of a University Library is referred to as:", o: ["The University Librarian", "The librarian in charge", "The Chief Executive Librarian", "Book keeper"], a: 0, exp: "In Nigerian universities, the 'University Librarian' is a Principal Officer." },
+    { q: "In LC Scheme, the following alphabets are NOT represented:", o: ["A, E, I, O & U", "A, B & Z", "I, O, W, X & Y", "None"], a: 2, exp: "Library of Congress (LC) skips I, O, W, X, and Y to allow for future expansion." },
+    { q: "The card catalogue is in card size:", o: ["3'x4'", "3'x5'", "4'x4'", "3'x3'"], a: 1, exp: "The standard international size for library cards is 3x5 inches." },
+    { q: "The minimum number of books a student can borrow at once is:", o: ["2", "5", "4", "6"], a: 1, exp: "Most academic libraries allow students to borrow up to 5 books at once." },
+    { q: "Which section of the library is responsible for registration of users?", o: ["Circulation", "Serials", "References", "Cataloguing"], a: 0, exp: "Circulation (or 'Reserved') handles registration and borrowing." },
+    { q: "The appendix, references and questionnaire appear at the:", o: ["Beginning of a book", "Middle of a book", "End of a book", "None"], a: 2, exp: "Supplementary materials (Back Matter) are found at the end." },
+    { q: "Bibliotheque Nationale, British and Library of Congress are establish by:", o: ["National governments", "ECOWAS", "European Union", "None"], a: 0, exp: "These are National Libraries funded by their respective federal governments." },
+    { q: "One of the following is NOT a classification scheme:", o: ["University of Benin Classification Scheme", "Library of Congress Classification Scheme", "Universal Decimal Classification Scheme", "None"], a: 0, exp: "UNIBEN uses the Library of Congress (LC) scheme, not its own unique one." },
+    { q: "The author/editor, series, title and subject are:", o: ["Assess points to a document", "Access points to a document", "Classification points", "None"], a: 1, exp: "Access points are the specific data fields used to find a record in a database." },
+    { q: "Which type of information resource CANNOT be borrowed from the library?", o: ["Text Books", "Novels", "Encyclopedias", "Electronic databases"], a: 2, exp: "Reference materials like Encyclopedias must be used within the library." },
+    { q: "A library not restricted to certain age brackets and social standing is called:", o: ["Private library", "Public library", "Academic library", "College library"], a: 1, exp: "Public libraries are open to everyone in the general community." },
+    { q: "There was ... Much noise at night that we couldn't sleep", o: ["Such a", "Such", "That", "So"], a: 3, exp: "We use 'So' before an adjective or adverb without a noun." },
+    { q: "A policeman stopped me and I....to the station", o: ["Was taken", "Took", "Am taken", "Will be taken"], a: 0, exp: "This is a passive voice sentence in the past tense." },
+    { q: "Find the word nearest in meaning to: CONCUR", o: ["Agree", "Participate", "Recognize", "Consult"], a: 0, exp: "To concur is to happen at the same time or to be in agreement." },
+    { q: "Although the problem was simple .... student were able to solve it", o: ["Little", "Small", "Few", "A lot of"], a: 2, exp: "We use 'few' for countable nouns when the number is surprisingly low." },
+    { q: "I have no respect for individual who are too", o: ["Complicated", "Compliance", "Complaint", "Compliable"], a: 0, exp: "Complicated in this context refers to someone hard to understand or deal with." },
+    { q: "Remember this matter is strictly....", o: ["Between you and me", "Between you and I", "Among you and I", "Among you and me"], a: 0, exp: "After 'between', we use object pronouns (me, her, them)." },
+    { q: "For his suggestion is completely.... The point and cannot be accepted", o: ["Beside", "To", "About", "On"], a: 0, exp: "'Beside the point' means irrelevant or not related." },
+    { q: "Find the word nearest in meaning to: FEAT", o: ["Talent", "Accomplishment", "Celebration", "Thrill"], a: 1, exp: "A feat is an achievement that requires great courage, skill, or strength." },
+    { q: "The John Harris library falls under which type of library:", o: ["National library", "Academic library", "Special library", "Public library"], a: 1, exp: "University libraries are classified as Academic libraries." },
+    { q: "The catalogue card is all of these except:", o: ["An access to the shelf", "A finding tool", "Classification mark", "All of the above"], a: 2, exp: "A catalogue card *contains* a classification mark, but it isn't one itself." },
+    { q: "Find the word nearest in meaning to: DICTION", o: ["System", "Articulation", "Memory", "Suggestion"], a: 1, exp: "Diction refers to the style of speaking or articulation." },
+    { q: "The secretary general was shocked at the number of...", o: ["Children soldiers", "Child soldiers", "Child's soldiers", "Childish soldiers"], a: 1, exp: "In English, nouns acting as adjectives ('Child') are usually singular." },
+    { q: "Catalogue card is all of this but one:", o: ["Finding tool", "Classification mark", "An access shelf", "None of the above"], a: 1, exp: "A classification mark is just a code found on the card." },
+    { q: "You who .... Convicted should appeal", o: ["Is", "Are", "Has been", "Were"], a: 3, exp: "The plural/formal 'who were' is used for the subject you." },
+    { q: "Which of these set only appears at the end of a book:", o: ["Contents page, Appendix, Frontispiece", "Appendix, Reference and Questionnaire", "Questionnaire only", "Title page, Reference and Appendix"], a: 3, exp: "Reference lists and Appendices are standard 'Back Matter'." },
+    { q: "Find the nearest in meaning to: ADVERSARY", o: ["Helper", "Leader", "Enemy", "Civilian"], a: 2, exp: "Adversary means opponent or enemy." },
+    { q: "The bank manager assured us that there was nothing to worry about", o: ["With regard to the loan", "As regard to the loan", "With regards to the loan", "In regard to the loan"], a: 2, exp: "The standard phrase is 'with regards to' or 'as regards'." },
+    { q: "Following are function of Academics Library except:", o: ["Cooperate with school", "Provide info for program", "Cooperate with other libraries", "Serve as permanent depository for all documents in country"], a: 3, exp: "National libraries, not academic ones, serve as permanent depositories." },
+    { q: "What is 'Use of Library'?", o: ["Ability to navigate independently", "Removing books from library", "Ability of librarian to remove books", "All of the above"], a: 0, exp: "It is the set of skills needed to find information without help." },
+    { q: "The police claim that a number of stolen cars.... recoverd", o: ["Is being", "Has being", "Have been", "Has been"], a: 2, exp: "'A number of' is treated as plural, hence 'have been'." },
+    { q: "He isn't coming home, is he?...", o: ["Yes", "No", "Why", "Now"], a: 0, exp: "Tag questions seek confirmation." },
+    { q: "The Bible's PRODIGAL son became quite wealthy eventually:", o: ["Prestigious", "Affluence", "Poverty", "Greedy"], a: 3, exp: "Prodigal means spending money recklessly; here, greedy is the closest match provided." },
+    { q: "What type of information resource cannot be allowed for borrowing?", o: ["Textbooks", "Novels", "Encyclopedias", "Electronic data access"], a: 2, exp: "Reference works like Encyclopedias stay in the library." },
+    { q: "You should show some consideration... the feelings of others", o: ["With", "For", "About", "By"], a: 1, exp: "One has consideration 'for' someone or something." },
+    { q: "Which classification scheme is used in John Harris library?", o: ["Dewey Decimal", "Uniben Manual", "Library of Congress", "National Congress"], a: 2, exp: "Most Nigerian university libraries use the Library of Congress (LC) system." },
+    { q: "Don't eat just INNOCUOUS looking mushroom you see around:", o: ["Harmful", "Harmless", "Innocent", "Immunized"], a: 1, exp: "Innocuous means not harmful." },
+    { q: "Must you always.... lies", o: ["Speak", "Tell", "Say", "Talk"], a: 1, exp: "In English, we 'tell' lies but 'speak' the truth." },
+    { q: "What's the major advantage of OPAC over card catalogue?", o: ["Uses computer", "Visible and appealing", "Allows multiple user access", "Gives more details"], a: 2, exp: "The primary benefit of digital catalogues is shared access." },
+    { q: ".....a lot of argument for and against car loans in the press recently", o: ["There has been", "There have been", "There are", "There"], a: 2, exp: "'There are' refers to the ongoing state of these arguments." },
+    { q: "One of the following is not an information about book:", o: ["Author", "Place of publication", "Number of copy printed", "None of the options"], a: 2, exp: "The specific number of copies printed isn't usually in the library catalog." },
+    { q: "A folder sheet of paper sewn together numbering at least 49 pages is a:", o: ["Book", "Pamphlet", "Journal", "Manuscript"], a: 0, exp: "UNESCO defines a book as a non-periodical publication of 49+ pages." },
+    { q: "The governor commended the society's service to the nation:", o: ["Humanitarian", "Humanist", "Humanity", "Humanistic"], a: 0, exp: "Humanitarian refers to promoting human welfare." },
+    { q: "I did for that contract:", o: ["Tended", "Apply", "Tendered", "Bid"], a: 3, exp: "To 'bid' is the standard term for attempting to get a contract." },
+    { q: "The lamp shades were translucent (Opposite):", o: ["Transparent", "Opaque", "Intersect", "Luminous"], a: 1, exp: "Translucent lets some light; Opaque lets none." },
+    { q: "In library open access means:", o: ["Books cannot be loaned", "Books can be accessed by users on shelves", "Books can only be read inside", "None"], a: 1, exp: "Open access allows you to pick books off the shelf yourself." },
+    { q: "Opposite: My niece has an UNQUENCHABLE thirst for adventure story", o: ["An inextinguishable", "A spurious", "An illegitimate", "A reduced"], a: 3, exp: "Unquenchable means it can't be satisfied; reduced means it is small." },
+    { q: "Nearest: You can LEARN a great deal just from watching other players", o: ["Allow", "Discover", "Waste", "Invent"], a: 1, exp: "To learn is to discover new information." },
+    { q: "Nearest: The lazy man cast a lustful glance at his neighbor's wife", o: ["Envious", "Hateful", "Quick", "Covetous"], a: 3, exp: "Covetous means having a strong desire for something belonging to another." },
+    { q: "A call number/class mark/call Mark may be referred to as:", o: ["Unique number for each book", "Total books available", "Standard number from national library", "None"], a: 0, exp: "The Call Number is the 'address' of the book on the shelf." },
+    { q: "One of the following is not a classification scheme:", o: ["University of Benin Classification Scheme", "Library Congress", "Universal Decimal", "None"], a: 0, exp: "UNIBEN uses the standard LC scheme." },
+    { q: "The circulation section is responsible for:", o: ["Acquire new material", "Shelving and shelf reading", "Newspapers and journals", "None"], a: 1, exp: "The circulation staff manages the shelves and the movement of books." },
+    { q: "I think I just saw Dad's car pull... the driveway:", o: ["Into", "Over", "By", "None"], a: 0, exp: "You pull 'into' a driveway." },
+    { q: "Prominent libraries (British, LC) are established by:", o: ["National government", "ECOWAS", "European Union", "None"], a: 0, exp: "These serve as the official libraries for entire nations." },
+    { q: "The students had a... on Independence Day:", o: ["March past", "Match pass", "Match past", "March pass"], a: 0, exp: "A 'march past' is a formal parade of people walking past a reviewer." },
+    { q: "Idiomatic expression 'just about' means:", o: ["Soon", "Nearly", "Too much", "None"], a: 1, exp: "If something is 'just about' done, it is nearly finished." },
+    { q: "A girl who is 'jailbait' is:", o: ["Very loud", "Interested in fishing", "Still a minor", "None"], a: 2, exp: "Jailbait is slang for a minor whose age makes sexual activity illegal." },
+    { q: "Legal depository law apply to:", o: ["National library", "Public library", "Special library", "None"], a: 0, exp: "This law ensures the National Library has a record of all published works." },
+    { q: "Jane is plain but her sister is very...:", o: ["Sympathetic", "Sophisticated", "Complex", "Attractive"], a: 3, exp: "Plain is often a polite way to say unattractive; Attractive is the opposite." },
+    { q: "Do you mind .... another hour or two?", o: ["To wait", "To have waited", "Waiting", "Wait"], a: 2, exp: "After 'mind', we use the -ing form (gerund)." },
+    { q: "Nearest: SCINTILLATING", o: ["Distressing", "Refined", "Fascinating", "Discouraging"], a: 2, exp: "Scintillating means brilliant, clever, or fascinating." },
+    { q: "To locate a book by Adewale Roy Abiodun, look under:", o: ["Adewale", "Roy", "Abiodun", "None"], a: 2, exp: "Library catalogs are organized by Surname (Last Name)." },
+    { q: "The train now at the platform 6 is the 10:45 for London:", o: ["Sitting", "Standing", "Waiting", "Remaining"], a: 1, exp: "In UK English, trains 'stand' at a platform." },
+    { q: "Unfortunately, it's now 11:00 O'clock and so there is a.... of 15mins:", o: ["Waiting", "Lateness", "Space", "Delay"], a: 3, exp: "If a train is late, there is a delay." },
+    { q: "The train at platform 14 cannot leave because there's a power...:", o: ["Failure", "Miss", "Falling", "Missing"], a: 0, exp: "A 'power failure' is the standard term for a blackout." },
+    { q: "Severe storms means some lines are now....", o: ["Waterlogged", "Waterproof", "Water soaked", "Water fall"], a: 0, exp: "Waterlogged means saturated or filled with water." },
+    { q: "The restaurant in the main .... is now open:", o: ["Concord", "Conduit", "Concourse", "Condition"], a: 2, exp: "A concourse is a large open area inside a station or airport." },
+    { q: "Mistakes should never...", o: ["Recur", "Retake", "Repeat", "Refer"], a: 0, exp: "To recur means to happen again." },
+    { q: "The zip discs in the office is running dangerously low:", o: ["Share", "State", "Stock", "Practice"], a: 2, exp: "When you are low on supplies, your 'stock' is low." },
+    { q: "I don't think I'll beat him. I am out of ....", o: ["Fitness", "Game", "Play", "Practice"], a: 3, exp: "Being 'out of practice' means you aren't performing well because you haven't done it lately." }
+]
+};
+
+let state = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {
+    mode: null, course: null, index: 0, answers: {}, endTime: null, shuffled: []
+};
+
+function save() { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
+
+function toggleTheme() {
+    const isDark = document.body.classList.toggle("dark");
+    document.body.classList.toggle("light", !isDark);
+    document.getElementById('theme-btn').innerHTML = isDark ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
+}
+
+function start(mode) {
+    state.mode = mode;
+    state.course = null;
+    save();
+    render();
+}
+
+function selectCourse(c) {
+    state.course = c;
+    state.index = 0;
+    state.answers = {};
+    // Create a copy of the questions for this session
+    state.shuffled = [...QUESTIONS_DATA[c]];
+    
+    if(state.mode === 'exam') {
+        // Set a bold 1-hour countdown for all courses
+        const examDuration = 3600000; 
+        state.endTime = Date.now() + examDuration; 
+    }
+    
+    save();
+    render();
+}
+
+function goHome() {
+    state = { mode: null, course: null, index: 0, answers: {}, endTime: null, shuffled: [] };
+    save();
+    render();
+}
+
+function answer(idx) {
+    if (state.mode === 'learning' && state.answers[state.index] !== undefined) return;
+    state.answers[state.index] = idx;
+    save();
+    render();
+}
+
+function finish() {
+    let score = 0;
+    state.shuffled.forEach((q, i) => { if(state.answers[i] === q.a) score++; });
+    let percent = Math.round((score / state.shuffled.length) * 100);
+    let msg = percent >= 75 ? "Exceptional Performance!" : percent >= 50 ? "Good work, you passed!" : "Keep studying, improve needed.";
+
+    const root = document.getElementById('app-root');
+    root.innerHTML = `
+        <div class="card">
+            <h2 style="text-align:center; font-weight:800; letter-spacing:-1px;">${msg}</h2>
+            <h1 style="text-align:center; color:var(--purple); font-size:72px; font-weight:900; margin:25px 0; letter-spacing:-3px; text-shadow: 0 0 20px var(--purple-glow);">${percent}%</h1>
+            <p style="text-align:center; margin-bottom:25px; font-weight:600; color:var(--muted)">You achieved <b>${score}</b> correct out of <b>${state.shuffled.length}</b></p>
+            <div class="review-scroll">
+                ${state.shuffled.map((q, i) => `
+                    <div style="padding:20px; background:var(--accent); border-radius:18px; margin-bottom:15px; border: 1px solid rgba(255,255,255,0.02)">
+                        <p style="font-weight:700; margin-bottom:8px"><b>${i+1}. ${q.q}</b></p>
+                        <p style="color:${state.answers[i] === q.a ? 'var(--green)' : 'var(--red)'}; font-weight:600">
+                            Result: ${state.answers[i] !== undefined ? q.o[state.answers[i]] : '<span style="color:var(--muted)">Skipped</span>'}
+                        </p>
+                        ${state.answers[i] !== q.a ? `<p style="color:var(--green); font-weight:600">Correct: ${q.o[q.a]}</p>` : ''}
+                    </div>
+                `).join('')}
+            </div>
+            <button class="btn" style="width:100%; font-size:18px" onclick="goHome()">Back to Main Menu</button>
+        </div>
+    `;
+    if(percent >= 50) runConfetti();
+}
+
+function render() {
+    const root = document.getElementById('app-root');
+    
+    if (!state.mode) {
+        root.innerHTML = `
+            <div class="home-grid" style="animation:fadeIn 0.8s ease">
+                <div class="home-box" onclick="start('learning')"><i class="fa-solid fa-graduation-cap"></i><h3>Learning Mode</h3><p>Study with Insights</p></div>
+                <div class="home-box" onclick="start('exam')"><i class="fa-solid fa-stopwatch-20"></i><h3>Exam Mode</h3><p>Timed Challenge</p></div>
+                <div class="home-box" onclick="alert('no advert yet, place yours now.')"><i class="fa-solid fa-speaker"></i><h3> Ads here</h3><p> check out sponsored post</p></div>
+                <div class="home-box" onclick="window.open('https://wa.me/2348079558310')"><i class="fa-solid fa-code"></i><h3>Contact Dev</h3><p>Direct WhatsApp</p></div>
+                <div class="home-box" onclick="alert('System log updated.')"><i class="fa-solid fa-bug"></i><h3>Report Issue</h3><p>Found an error?</p></div>
+            </div>
+        `;
+        return;
+    }
+
+    if (!state.course) {
+        root.innerHTML = `
+            <div class="card">
+                <button class="btn btn-secondary" style="margin-bottom:25px" onclick="goHome()"><i class="fa-solid fa-arrow-left"></i> Back</button>
+                <div class="home-grid">
+                    ${Object.keys(QUESTIONS_DATA).map(c => `
+                        <div class="home-box" onclick="selectCourse('${c}')">
+                            <i class="fa-solid fa-book-open"></i>
+                            <h3>${c}</h3>
+                            <p>${QUESTIONS_DATA[c].length} Modules</p>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        `;
+        return;
+    }
+
+    let q = state.shuffled[state.index];
+    let progress = (Object.keys(state.answers).length / state.shuffled.length) * 100;
+
+    root.innerHTML = `
+        <div class="card">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+                <button class="btn btn-secondary" onclick="goHome()"><i class="fa-solid fa-house"></i> Exit</button>
+                <div id="timer-display" style="font-weight:800; font-size:20px; font-family:monospace; color:var(--red); text-shadow: 0 0 10px rgba(239, 68, 68, 0.3);"></div>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar"><div class="progress-fill" style="width:${progress}%"></div></div>
+            </div>
+            <h3 class="question-text">${state.index + 1}. ${q.q}</h3>
+            <div class="options">
+                ${q.o.map((opt, i) => {
+                    let cls = "";
+                    if (state.answers[state.index] !== undefined) {
+                        if (i === q.a) cls = 'correct';
+                        else if (i === state.answers[state.index]) cls = 'wrong';
+                    }
+                    return `<button class="${cls}" onclick="answer(${i})"><span style="margin-right:15px; opacity:0.5">${String.fromCharCode(65+i)}.</span> ${opt}</button>`;
+                }).join('')}
+            </div>
+            ${state.mode === 'learning' && state.answers[state.index] !== undefined ? `<div class="explain"><b>💡 Insight:</b> ${q.exp}</div>` : ''}
+            <div style="display:flex; justify-content:space-between; margin-top:30px; gap:15px">
+                <button class="btn btn-secondary" style="flex:1" onclick="state.index=Math.max(0,state.index-1);render()" ${state.index===0?'disabled':''}><i class="fa-solid fa-chevron-left"></i> Previous</button>
+                ${state.index === state.shuffled.length - 1 ? `<button class="btn" style="flex:1" onclick="finish()">Submit <i class="fa-solid fa-check-double"></i></button>` : `<button class="btn" style="flex:1" onclick="state.index++;render()">Next <i class="fa-solid fa-chevron-right"></i></button>`}
+            </div>
+            <div class="palette">
+                ${state.shuffled.map((_, i) => `<button onclick="state.index=${i};render()" class="${state.answers[i] !== undefined ? 'done' : ''} ${state.index === i ? 'current' : ''}">${i+1}</button>`).join('')}
+            </div>
+        </div>
+    `;
+}
+
+setInterval(() => {
+    if (state.mode === 'exam' && state.endTime) {
+        const diff = state.endTime - Date.now();
+        const display = document.getElementById('timer-display');
+        if (display && diff > 0) {
+            let s = Math.floor(diff / 1000);
+            let m = Math.floor(s / 60);
+            s %= 60;
+            display.innerText = `${m}:${s.toString().padStart(2,'0')}`;
+            if(m < 1) display.style.color = 'var(--red)'; else display.style.color = 'var(--text)';
+        } else if (diff <= 0) finish();
+    }
+}, 1000);
+
+function runConfetti() {
+    const canvas = document.getElementById('confetti');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+    let particles = Array.from({ length: 150 }).map(() => ({
+        x: Math.random() * canvas.width, y: canvas.height + 10,
+        r: Math.random() * 7 + 3, dx: (Math.random() - 0.5) * 12,
+        dy: Math.random() * -25 - 7, color: `hsl(${Math.random() * 360}, 80%, 60%)`
+    }));
+    function anim() {
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        particles.forEach(p => { p.x+=p.dx; p.y+=p.dy; p.dy+=0.35; ctx.fillStyle=p.color; ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,7); ctx.fill(); });
+        particles = particles.filter(p => p.y < canvas.height + 50);
+        if(particles.length > 0) requestAnimationFrame(anim);
+    }
+    anim();
+}
+
+render();
+</script>
+<script>
+function updateViews() {
+    const display = document.getElementById('view-number');
+    
+    // 1. Set your "Project Launch" date (April 1st, 2026)
+    const launchDate = new Date('2026-04-01T00:00:00');
+    const now = new Date();
+    
+    // 2. Calculate the difference in milliseconds
+    const diffInMs = now - launchDate;
+    
+    // 3. Convert to 30-minute blocks (1,800,000 ms = 30 mins)
+    const thirtyMinBlocks = Math.floor(diffInMs / 1800000);
+    
+    // 4. Base (72) + 3 views for every 30 mins passed
+    const calculatedViews = 72 + (thirtyMinBlocks * 3);
+    
+    // 5. Update the UI with a clean, comma-separated number
+    display.innerText = calculatedViews.toLocaleString();
+}
+
+// Run it immediately
+updateViews();
+
+// Optional: Update the number live while the user stays on the page
+setInterval(updateViews, 60000); // Checks every minute
+</script>
+
+</body>
+
+</html>
